@@ -1,23 +1,40 @@
+  
 
 # Langchain Chatbot
 
   
 
+  
+
 This bot was built to be able to assist newly hired employees to learn and navigate corporate procedures.
+
+  
 
 The program though can be used to build custom bots that use several PDF files as source of their knowledge.
 
+  
+
 The app is preconfigured to work with the following models:
 
+  
+
 + AzureChatOpenAI (default)
+
+  
 
 + ChatGoogleGenerativeAI
 
   
 
+  
+
 Currently, the OpenAI APIs do not have a free subscription plan for personal use.
 
+  
+
 You can still play for free though, using the Gemini APIs with your personal account.
+
+  
 
   
 
@@ -25,7 +42,11 @@ You can still play for free though, using the Gemini APIs with your personal acc
 
   
 
+  
+
 ### Built With
+
+  
 
   
 
@@ -33,37 +54,61 @@ You can still play for free though, using the Gemini APIs with your personal acc
 
   
 
+  
+
 ## Installation
+
+  
 
 1. First you need to have Python installed
 
-	[Download it here](https://www.python.org/downloads/)
+  
+
+[Download it here](https://www.python.org/downloads/)
+
+  
 
   
 
 2. Install all the required packages:
 
+  
+
+```  
+
+pip install -r requirements.txt  
+
 ```
 
-pip install -r requirements.txt
-
-```
+  
 
 3. Fill in your API credentials in the .env file (see .env.example)
 
+  
+
 4. Run the app with
 
+  
+
+``` 
+
+streamlit run app.py  
+
 ```
 
-streamlit run app.py
+  
 
-```
+From the .env file you can choose to show the sidebar with the file uploader.
 
-The program will ask you if you want to show the sidebar with the file uploader.
 By default the sidebar is hidden so that the user can only access a predefined set of files.
-The program will then ask you which model to use, type "gemini" or leave empty to use OpenAI.
+
+You can also choose the model to use, set it to "openai" or "gemini".
+
+  
 
 ## Contributing
+
+  
 
   
 
@@ -79,7 +124,11 @@ Contributions are what make the open source community such an amazing place to l
 
   
 
+  
+
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+  
 
   
 
@@ -93,7 +142,11 @@ Don't forget to give the project a star! Thanks again!
 
   
 
+  
+
 1. Fork the Project
+
+  
 
   
 
@@ -105,13 +158,19 @@ Don't forget to give the project a star! Thanks again!
 
   
 
+  
+
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 
   
 
   
 
+  
+
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
+
+  
 
   
 
@@ -129,7 +188,11 @@ Don't forget to give the project a star! Thanks again!
 
   
 
+  
+
 <!-- CONTACT -->
+
+  
 
   
 
@@ -143,7 +206,11 @@ Don't forget to give the project a star! Thanks again!
 
   
 
+  
+
 Enrico Bergamini - enricobergamini@outlook.it
+
+  
 
   
 
@@ -152,11 +219,14 @@ Enrico Bergamini - enricobergamini@outlook.it
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
   
+
   
 
   
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
+  
 
   
 
@@ -168,7 +238,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+  
 
   
 
@@ -180,7 +254,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+  
 
   
 
@@ -192,7 +270,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+  
 
   
 
@@ -204,7 +286,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+  
 
   
 
@@ -212,7 +298,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+
+  
 
   
 
@@ -224,7 +314,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
+  
 
   
 
@@ -236,7 +330,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [linkedin-url]: https://linkedin.com/in/enrico-bergamini
+
+  
 
   
 
@@ -248,7 +346,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+
+  
 
   
 
@@ -260,7 +362,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+
+  
 
   
 
@@ -272,7 +378,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+
+  
 
   
 
@@ -284,7 +394,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+
+  
 
   
 
@@ -296,7 +410,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+
+  
 
   
 
@@ -308,7 +426,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+
+  
 
   
 
@@ -320,7 +442,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
+  
 
   
 
@@ -332,7 +458,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+
+  
 
   
 
@@ -342,7 +472,11 @@ Enrico Bergamini - enricobergamini@outlook.it
 
   
 
+  
+
 [CSS-url]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=whit
+
+  
 
   
 

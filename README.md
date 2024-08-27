@@ -10,6 +10,12 @@ Currently, the OpenAI APIs do not have a free subscription plan for personal use
 You can still play for free though, using the Gemini APIs with your personal account.
 
 [Click here to request your free Google API Key](https://makersuite.google.com/app/apikey?hl=it)
+
+### Built With
+
+  
+![PYTHON LOGO](https://img.shields.io/badge/Python-1572B6?style=for-the-badge&logo=PYTHON&logoColor=FFF)
+
 ## Installation
 1. First you need to have Python installed
 [Download it here](https://www.python.org/downloads/)

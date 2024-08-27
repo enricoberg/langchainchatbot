@@ -11,7 +11,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
-
+import argparse
 
 #LOAD ALL THE CREDENTIALS FROM THE ENV FILE
 load_dotenv()
@@ -56,7 +56,7 @@ def get_vector_store(text_chunks):
     vector_store.save_local("faiss_index")
 
 
-def get_conversational_chain():
+def get_conversational_chain(version):
 
     prompt_template = """    
     Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
@@ -67,7 +67,7 @@ def get_conversational_chain():
 
     Answer:
     """
-    if "--gemini" in st.cli.argv:
+    if version=="gemini":
         model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.3)
     else:
         model = AzureChatOpenAI(
@@ -85,15 +85,15 @@ def get_conversational_chain():
 
 
 
-def user_input(user_question):
-    if "--gemini" in st.cli.argv:
+def user_input(user_question,version):
+    if version=="gemini":
         embeddings= GoogleGenerativeAIEmbeddings(model = "models/text-embedding-004")
     else:
         embeddings=OpenAIEmbeddings(openai_api_base=API_BASE_URL,headers=open_api_headers, deployment="text-embedding-ada-002",model="text-embedding-ada-002", openai_api_key="not relevant", chunk_size=1, openai_api_type="azure", openai_api_version="2023-03-15-preview")
     
     new_db = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
     docs = new_db.similarity_search(user_question)
-    chain = get_conversational_chain()    
+    chain = get_conversational_chain(version)    
     response = chain(
         {"input_documents":docs, "question": user_question}
         , return_only_outputs=True)
@@ -103,7 +103,7 @@ def user_input(user_question):
 
 
 
-def main(show_sidebar):
+def main(show_sidebar,version):
     
     
     
@@ -114,7 +114,7 @@ def main(show_sidebar):
     user_question = st.text_input("Chiedimi qualunque cosa, io conosco tutte le procedure BAI e sono qui per aiutarti:")
 
     if user_question:
-        user_input(user_question)
+        user_input(user_question,version)
     if show_sidebar:
         with st.sidebar:
             st.title("Menu:")
@@ -129,12 +129,20 @@ def main(show_sidebar):
 
 
 if __name__ == "__main__":
-    show_sidebar=False
-    if "--openai" in st.cli.argv:
-        print("Using OpenAI model")
-    elif "--gemini" in st.cli.argv:
-        print("Using Gemini model")
-    if "--showsidebar" in st.cli.argv:
-        show_sidebar=True
+    print("Show sidebar? y/n")
+    show_sidebar = input()
+    if show_sidebar == "y":
+        show_sidebar = True
+    else:
+        show_sidebar = False
+    print("Which model do you want to use? openai, gemini")
+    version=input()
+    if version == "gemini":
+        version="gemini"
+    else:
+        version="openai"   
+    print("Running...")
+    main(show_sidebar,version)
 
-    main(show_sidebar)
+
+    

@@ -64,7 +64,7 @@ You can still play for free though, using the Gemini APIs with your personal acc
 
   
 
-[Download it here](https://www.python.org/downloads/)
+	[Download it here](https://www.python.org/downloads/)
 
   
 
@@ -92,19 +92,38 @@ pip install -r requirements.txt
 
 ``` 
 
-streamlit run app.py  
+streamlit run app_openai.py  
 
 ```
+or
+``` 
 
-  
+streamlit run app_gemini.py  
 
-From the .env file you can choose to show the sidebar with the file uploader.
+```
+  depending on which model you want to use.
 
-By default the sidebar is hidden so that the user can only access a predefined set of files.
+## Configuration
+You can choose to visualize the sidebar with fileuploader by setting the show_sidebar variable to True or False.
 
-You can also choose the model to use, set it to "openai" or "gemini".
-
-  
+You can play with various models to get different outcomes.
+With Gemini, I use:
+```
+model  =  ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0.3)
+```
+for quick responses, or alternatively:
+```
+model  =  ChatGoogleGenerativeAI(model="gemini-1.5-pro",temperature=0.3)
+```
+  which is more advanced but is slower and limited in the free version.
+  With OpenAI several models are available with various levels of price per token, performances and context length.
+  ```
+deployment_name="text-embedding-ada-002",
+deployment_name="chatgpt3_5-4k",
+deployment_name="chatgpt3_5-16k",
+deployment_name="chatgpt4-8k",
+deployment_name="chatgpt4-32k"
+```
 
 ## Contributing
 
